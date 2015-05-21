@@ -4,7 +4,7 @@ var messageInput = document.getElementById("message");
 var messageList = document.getElementById("message-list");
 
 myButton.addEventListener("click", onButtonClick);
-
+myButton.addEventListener("click", render);
 
 function onButtonClick(eventObj) {
 	console.log(messageInput.value);
@@ -15,7 +15,7 @@ function onButtonClick(eventObj) {
 
 function render(eventObj) {
 	messageList.value = "";
-	var listToString = "<div>" + list[i].join("</div><div>") + "</div>";
-	console.log(listToString);
-	messageList.value = listToString;
+	messageList.innerHTML = "<div>" + list.join("</div><div>") + "</div>";
+	console.log(messageList.innerHTML);
+	// listToString = messageList.innerHTML;
 }
